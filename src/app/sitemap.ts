@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+export const dynamic = 'force-static';
 import { TRAMITES } from '@/data/tramites';
 import { COMUNAS } from '@/data/comunas';
 
