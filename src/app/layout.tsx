@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Trámites DOM en Chile — Precio exacto | APPARQ",
   description: "Permisos de construcción, regularización y más. Arquitecto verificado asignado en 24h. Cotiza gratis.",
   metadataBase: new URL("https://tramites.apparq.cl"),
+  verification: {
+    google: "gYQ2Wve-oPNXMvQbSXSloYCzQCw6u1UGSfAf5vqtMPE",
+  },
 };
 
 export default function RootLayout({
