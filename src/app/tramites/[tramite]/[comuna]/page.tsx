@@ -9,12 +9,10 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  // Prioridad 1: todas las combinaciones de trámites × comunas alta prioridad
-  // Prioridad 2+: rest on demand (ISR) — Cloudflare Pages las genera en el primer request
-  const comunasPri1 = COMUNAS.filter(c => c.prioridad === 1);
+  // Generar TODAS las combinaciones — requerido para output: 'export'
   const params: { tramite: string; comuna: string }[] = [];
   for (const t of TRAMITES) {
-    for (const c of comunasPri1) {
+    for (const c of COMUNAS) {
       params.push({ tramite: t.slug, comuna: c.slug });
     }
   }
