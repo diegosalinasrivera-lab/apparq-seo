@@ -370,7 +370,7 @@ export default async function TramiteComunaPage({ params }: Props) {
             <div className="flex items-center gap-2">
               <LogoIcon />
               <span className="font-black text-[#1a1a2e]">APPARQ</span>
-              <span>· DSR ARQ SPA</span>
+              <span>· APPARQ SpA · RUT 78.441.391-8</span>
             </div>
             <div className="flex gap-4 flex-wrap justify-center">
               <a href="mailto:hola@apparq.cl" className="hover:text-[#E8503A] transition-colors">hola@apparq.cl</a>
