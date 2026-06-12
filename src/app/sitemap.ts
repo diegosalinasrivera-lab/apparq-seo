@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Páginas hub — una por trámite
   const hubs: MetadataRoute.Sitemap = TRAMITES.map(t => ({
-    url: `${BASE}/tramites/${t.slug}`,
+    url: `${BASE}/tramites/${t.slug}/`,
     lastModified: now,
     changeFrequency: 'weekly' as const,
     priority: 0.9,
@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const t of TRAMITES) {
     for (const c of COMUNAS) {
       leaves.push({
-        url: `${BASE}/tramites/${t.slug}/${c.slug}`,
+        url: `${BASE}/tramites/${t.slug}/${c.slug}/`,
         lastModified: now,
         changeFrequency: 'monthly' as const,
         priority: c.prioridad === 1 ? 0.8 : c.prioridad === 2 ? 0.7 : 0.5,
