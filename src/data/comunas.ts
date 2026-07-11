@@ -60,7 +60,7 @@ export const COMUNAS: Comuna[] = [
   { slug: 'san-pedro',          nombre: 'San Pedro',          region: 'RM', prioridad: 2 },
   { slug: 'tiltil',             nombre: 'Tiltil',             region: 'RM', prioridad: 2 },
   { slug: 'padre-hurtado',      nombre: 'Padre Hurtado',      region: 'RM', prioridad: 2 },
-  { slug: 'peñaflor',           nombre: 'Peñaflor',           region: 'RM', prioridad: 2 },
+  { slug: 'penaflor',            nombre: 'Peñaflor',            region: 'RM', prioridad: 2 },
   // ── OTRAS REGIONES — PRIORIDAD 3 ─────────────────────────────────────
   { slug: 'vina-del-mar',       nombre: 'Viña del Mar',       region: 'V',  prioridad: 3 },
   { slug: 'valparaiso',         nombre: 'Valparaíso',         region: 'V',  prioridad: 3 },

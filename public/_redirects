@@ -1,0 +1,5 @@
+# Redirect peñaflor (con ñ) → penaflor (slug correcto)
+/tramites/:tramite/pe%C3%B1aflor   /tramites/:tramite/penaflor   301
+/tramites/:tramite/pe%C3%B1aflor/  /tramites/:tramite/penaflor/  301
+/tramites/:tramite/peñaflor        /tramites/:tramite/penaflor   301
+/tramites/:tramite/peñaflor/       /tramites/:tramite/penaflor/  301
