@@ -79,18 +79,6 @@ export default async function TramiteComunaPage({ params }: Props) {
   const precioFmt = new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 });
   const precio = precioFmt.format(tramite.precio_desde);
 
-  const esInforme = tramite.slug === 'informe-propiedad';
-  const etapas = esInforme
-    ? [
-        { label: 'E1 — Inicio', pct: 0.50 },
-        { label: 'E2 — Entrega informe', pct: 0.50 },
-      ]
-    : [
-        { label: 'E1 — Inicio (20%)', pct: 0.20 },
-        { label: 'E2 — Elaboración (30%)', pct: 0.30 },
-        { label: 'E3 — Ingreso DOM (20%)', pct: 0.20 },
-        { label: 'E4 — Recepción final (30%)', pct: 0.30 },
-      ];
 
   const otrasComunas = COMUNAS
     .filter(c => c.prioridad <= 2 && c.slug !== comunaSlug)
@@ -223,21 +211,19 @@ export default async function TramiteComunaPage({ params }: Props) {
               </div>
             </div>
 
-            {/* Right: Etapas de pago */}
+            {/* Right: Forma de pago */}
             <div className="mt-8 md:mt-0 md:w-72 bg-white rounded-2xl p-5 border border-[#EDE8E3] shadow-sm flex-shrink-0">
-              <p className="text-[#E8503A] text-xs font-bold uppercase tracking-wider mb-4">Etapas de pago</p>
-              <table className="w-full text-sm">
-                <tbody>
-                  {etapas.map((e, i) => (
-                    <tr key={i} className="border-b border-[#EDE8E3] last:border-0">
-                      <td className="py-2.5 text-[#6b6b7a] text-xs">{e.label}</td>
-                      <td className="py-2.5 text-[#1a1a2e] font-bold text-xs text-right">
-                        {precioFmt.format(Math.round(tramite.precio_desde * e.pct))}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <p className="text-[#E8503A] text-xs font-bold uppercase tracking-wider mb-4">Forma de pago</p>
+              <p className="text-2xl font-black text-[#1a1a2e]">Desde {precio}</p>
+              <p className="text-[#6b6b7a] text-xs mt-2 leading-relaxed">
+                Paga el total en hasta <strong className="text-[#1a1a2e]">12 cuotas sin interés</strong> con tarjeta de crédito vía Mercado Pago.
+              </p>
+              <a
+                href="https://apparq.cl"
+                className="block mt-4 bg-[#E8503A] text-white font-bold py-2.5 px-4 rounded-full text-xs text-center hover:bg-[#d14432] transition-colors"
+              >
+                Ver precio exacto →
+              </a>
               <p className="text-[#9b9bab] text-xs mt-3">* Precio referencial. Tu cotización exacta en 2 min.</p>
             </div>
           </div>
@@ -286,7 +272,7 @@ export default async function TramiteComunaPage({ params }: Props) {
             {[
               { n: '1', title: 'Cotiza gratis', desc: 'Ingresa los datos de tu propiedad en 2 minutos.' },
               { n: '2', title: 'Arquitecto asignado', desc: `Un arquitecto verificado en ${comuna.nombre} toma tu caso en 24h.` },
-              { n: '3', title: 'Pago por etapas', desc: 'Pagas en 4 etapas a medida que avanza el trámite.' },
+              { n: '3', title: 'Paga en cuotas', desc: 'Paga el total en hasta 12 cuotas sin interés con Mercado Pago.' },
               { n: '4', title: 'Trámite listo', desc: 'Recibes toda la documentación aprobada por la DOM.' },
             ].map((s, i) => (
               <div key={i} className="flex gap-3">

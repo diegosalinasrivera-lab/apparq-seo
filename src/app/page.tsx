@@ -101,7 +101,7 @@ export default function Home() {
             {[
               { n: '1', title: 'Cotiza gratis', desc: 'Ingresa los datos de tu propiedad en 2 minutos y obtén precio exacto.' },
               { n: '2', title: 'Arquitecto asignado', desc: 'Un arquitecto verificado toma tu caso en menos de 24 horas.' },
-              { n: '3', title: 'Pago por etapas', desc: 'Pagas en 4 etapas a medida que avanza el trámite. Sin sorpresas.' },
+              { n: '3', title: 'Paga en cuotas', desc: 'Paga el total en hasta 12 cuotas sin interés con Mercado Pago.' },
               { n: '4', title: 'Trámite listo', desc: 'Recibes toda la documentación aprobada por la DOM.' },
             ].map((s, i) => (
               <div key={i} className="flex gap-3">
